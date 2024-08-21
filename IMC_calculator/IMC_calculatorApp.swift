@@ -11,7 +11,7 @@ import SwiftUI
 struct IMC_calculatorApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentStackNavigation()
         }
     }
 }

@@ -11,6 +11,7 @@
 		08CDC27D2C757D63008EA8C5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CDC27C2C757D63008EA8C5 /* ContentView.swift */; };
 		08CDC27F2C757D64008EA8C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08CDC27E2C757D64008EA8C5 /* Assets.xcassets */; };
 		08CDC2822C757D64008EA8C5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08CDC2812C757D64008EA8C5 /* Preview Assets.xcassets */; };
+		08D18BC02C758C7900D1EC8C /* ContentStackNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D18BBF2C758C7900D1EC8C /* ContentStackNavigation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		08CDC27C2C757D63008EA8C5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		08CDC27E2C757D64008EA8C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08CDC2812C757D64008EA8C5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		08D18BBF2C758C7900D1EC8C /* ContentStackNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentStackNavigation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +53,9 @@
 		08CDC2792C757D63008EA8C5 /* IMC_calculator */ = {
 			isa = PBXGroup;
 			children = (
-				08CDC27A2C757D63008EA8C5 /* IMC_calculatorApp.swift */,
 				08CDC27C2C757D63008EA8C5 /* ContentView.swift */,
+				08D18BBF2C758C7900D1EC8C /* ContentStackNavigation.swift */,
+				08CDC27A2C757D63008EA8C5 /* IMC_calculatorApp.swift */,
 				08CDC27E2C757D64008EA8C5 /* Assets.xcassets */,
 				08CDC2802C757D64008EA8C5 /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08D18BC02C758C7900D1EC8C /* ContentStackNavigation.swift in Sources */,
 				08CDC27D2C757D63008EA8C5 /* ContentView.swift in Sources */,
 				08CDC27B2C757D63008EA8C5 /* IMC_calculatorApp.swift in Sources */,
 			);
