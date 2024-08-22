@@ -10,6 +10,8 @@ import SwiftUI
 struct IMCView: View {
     @State var gender:Int = 0
     @State var height:Double = 150
+    @State var age:Int = 18
+    @State var weight:Int = 70
 
 
     var body: some View {
@@ -19,6 +21,11 @@ struct IMCView: View {
                 ToggleButton(text: "Mujer", imageName: "heart.fill", gender: 1, selectedGender: $gender)
             }
             HeightCalculator(selectedHeight: $height)
+            HStack{
+                CounterButton(value: $age, text: "Edad")
+                CounterButton(value: $weight, text: "Peso")
+            }
+            IMCCalculateButton()
         }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity).background(.backgroundApp)
             .toolbar{
                 ToolbarItem(placement: .principal) {
@@ -55,7 +62,7 @@ struct ToggleButton:View {
                     .foregroundColor(.white)
                 InformationText(text: text)
             
-            }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity).background(color)
+            }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity).background(color).cornerRadius(19)
         }
 
     }
@@ -83,9 +90,58 @@ struct HeightCalculator:View {
             TitleText(text: "Altura")
             InformationText(text: "\(Int(selectedHeight)) cm")
             Slider(value: $selectedHeight, in: 100...220, step: 2).accentColor(.purple).padding(.horizontal,20)
-        }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity).background(.backgroundComponent)
+        }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity).background(.backgroundComponent).cornerRadius(19)
     }
 }
+
+struct CounterButton:View {
+    @Binding var value:Int
+    let text:String
+    
+    var body: some View {
+        VStack{
+            TitleText(text: text)
+            InformationText(text: String(value))
+            HStack{
+                Button(action:{
+                    if(value > 0){
+                        value -= 1
+                    }
+                }
+                    ){
+                    ZStack{
+                        Circle().frame(width: 70,height: 70).foregroundColor(.purple)
+                        Image(systemName: "minus").resizable().scaledToFit().foregroundColor(.white).frame(width: 25,height: 25)
+                    }
+                }
+                Button(action: {
+                    if(value < 100){
+                        value += 1
+                    }
+                }){
+                    ZStack{
+                        Circle().frame(width: 70,height: 70).foregroundColor(.purple)
+                        Image(systemName: "plus").resizable().foregroundColor(.white).frame(width: 25, height: 25)
+                    }
+                }
+            }
+        }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity).background(.backgroundComponent).cornerRadius(19)
+    }
+}
+
+
+struct IMCCalculateButton:View {
+    var body: some View {
+        NavigationStack{
+            NavigationLink(destination: {}){
+                Text("Calcular").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).bold().foregroundColor(.purple)
+                    .frame(maxWidth: .infinity, maxHeight: 100).background(.backgroundComponent)
+            }
+        }
+    }
+}
+
+
 
 #Preview {
     IMCView()
