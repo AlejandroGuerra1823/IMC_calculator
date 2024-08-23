@@ -55,12 +55,12 @@
 		08CDC2792C757D63008EA8C5 /* IMC_calculator */ = {
 			isa = PBXGroup;
 			children = (
+				0811942D2C76E2780090C8A4 /* IMCResultView.swift */,
 				08CDC27C2C757D63008EA8C5 /* ContentView.swift */,
 				08D18BBF2C758C7900D1EC8C /* ContentStackNavigation.swift */,
 				08CDC27A2C757D63008EA8C5 /* IMC_calculatorApp.swift */,
 				08CDC27E2C757D64008EA8C5 /* Assets.xcassets */,
 				08CDC2802C757D64008EA8C5 /* Preview Content */,
-				0811942D2C76E2780090C8A4 /* IMCResultView.swift */,
 			);
 			path = IMC_calculator;
 			sourceTree = "<group>";
@@ -280,6 +280,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"IMC_calculator/Preview Content\"";
+				DEVELOPMENT_TEAM = SVB9UZ2QRF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -308,6 +309,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"IMC_calculator/Preview Content\"";
+				DEVELOPMENT_TEAM = SVB9UZ2QRF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

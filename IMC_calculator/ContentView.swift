@@ -12,8 +12,8 @@ struct IMCView: View {
     @State var height:Double = 150
     @State var age:Int = 18
     @State var weight:Int = 70
-
-
+    
+    
     var body: some View {
         VStack {
             HStack{
@@ -25,7 +25,7 @@ struct IMCView: View {
                 CounterButton(value: $age, text: "Edad")
                 CounterButton(value: $weight, text: "Peso")
             }
-            IMCCalculateButton()
+            IMCCalculateButton(height: height, weight: weight)
         }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity).background(.backgroundApp)
             .toolbar{
                 ToolbarItem(placement: .principal) {
@@ -61,10 +61,10 @@ struct ToggleButton:View {
                     .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
                     .foregroundColor(.white)
                 InformationText(text: text)
-            
+                
             }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity).background(color).cornerRadius(19)
         }
-
+        
     }
 }
 
@@ -108,7 +108,7 @@ struct CounterButton:View {
                         value -= 1
                     }
                 }
-                    ){
+                ){
                     ZStack{
                         Circle().frame(width: 70,height: 70).foregroundColor(.purple)
                         Image(systemName: "minus").resizable().scaledToFit().foregroundColor(.white).frame(width: 25,height: 25)
@@ -131,11 +131,13 @@ struct CounterButton:View {
 
 
 struct IMCCalculateButton:View {
+    var height:Double
+    var weight:Int
     var body: some View {
         NavigationStack{
-            NavigationLink(destination: {}){
+            NavigationLink(destination: {IMCResultView(userWeight: weight, userHeight:height)}){
                 Text("Calcular").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).bold().foregroundColor(.purple)
-                    .frame(maxWidth: .infinity, maxHeight: 100).background(.backgroundComponent)
+                    .frame(maxWidth: .infinity, maxHeight: 100).background(.backgroundComponent).cornerRadius(19)
             }
         }
     }
